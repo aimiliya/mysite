@@ -2,13 +2,13 @@ from django.core.paginator import Paginator
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
 
-from mysite import settings
 from read_statistic.utils import read_statisitcs_once_read
 from .models import Blog, BlogType
 
+EACH_PAGE_BLOGS_NUMBER = 10
 
 def get_blog_list_common_data(request, blog_all_list):
-    paginator = Paginator(blog_all_list, settings.EACH_PAGE_BLOGS_NUMBER)
+    paginator = Paginator(blog_all_list, EACH_PAGE_BLOGS_NUMBER)
     page_num = request.GET.get('page', 1)  # 获取页码参数，如果没有，返回1
     page_of_blogs = paginator.get_page(page_num)
     currentr_page = page_of_blogs.number  # 获取当前页码
