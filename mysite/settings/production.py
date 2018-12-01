@@ -32,13 +32,13 @@ DATABASES = {
     }
 }
 '''
-DATABASES_PASSWORD = os.environ['DATABASES_PASSWORD']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysql_db',
         'USER': 'lgs',
-        'PASSWORD': DATABASES_PASSWORD,
+        'PASSWORD': 'log123456',
         'HOST': 'localhost',
         'PORT': '3306',
     }
